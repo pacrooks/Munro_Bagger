@@ -25,7 +25,9 @@ Mountain.prototype.same = function(another) {
 }
 
 var unQuote = function(str) {
+  if (str[0] !== '"') return str;
   return str.substr(1, str.length-2);
+  // return str;
 }
 
 var fs = require('fs');
@@ -42,7 +44,11 @@ var i;
 for(i = 0; i < smcLinesIn.length; i++) {
   line = smcLinesIn[i];
   fields = line.split(",");
-  smcMtns.push(new Mountain(unQuote(fields[0]), unQuote(fields[1]), unQuote(fields[2]), fields))
+  var lastField = fields[fields.length-1];
+  if (lastField.substr(-1) === "\r") {
+    fields[fields.length-1] = lastField.slice(0, -1);
+  }
+  smcMtns.push(new Mountain(fields[0], fields[1], fields[2], fields))
 }
 
 for (i = 0; i < munroLinesIn.length; i++) {
@@ -77,10 +83,15 @@ for(i = 0; i < smcMtns.length; i++) {
 }
 
 for(i = 0; i < smcMtns.length; i++) {
-  linesOut += "\"" + smcMtns[i].gridRef + "\",\"" + smcMtns[i].name + "\",\"" + smcMtns[i].height + "\"," +
-    smcMtns[i].partner.csv[4] + "," + smcMtns[i].partner.csv[5] + "," + smcMtns[i].partner.csv[6] +
-    "," +  smcMtns[i].partner.csv[7] + "," + smcMtns[i].partner.csv[8] + "," + smcMtns[i].csv[3] +
-    "," + smcMtns[i].csv[4] + "\n";
+  if (smcMtns[i].partner) {
+    linesOut += "\"" + smcMtns[i].gridRef + "\",\"" + smcMtns[i].name + "\",\"" + smcMtns[i].height +
+      "\"," + smcMtns[i].partner.csv[4] + "," + smcMtns[i].partner.csv[5] + "," +
+      smcMtns[i].partner.csv[6] + "," +  smcMtns[i].partner.csv[7] + "," + smcMtns[i].partner.csv[8] +
+      ",\"" + smcMtns[i].csv[3] + "\",\"" + smcMtns[i].csv[4] + "\",\"" + smcMtns[i].csv[5] + "\"\n";
+  }
+  else {
+    console.log(i+1, smcMtns[i].name, "has no partner")
+  }
 }
 
 fs.writeFileSync("combined.csv", linesOut);

@@ -1,9 +1,14 @@
+var GridRef = require('./grid_ref')
+
 var Mountain = function(options) {
   this._id = options.id;
   this._name = options.name;
   this._height = options.height;
-  this._gridRef = options.gridRef;
+  this._gridRef = new GridRef(options.gridRef);
   this._latLng = options.latLng;
+  this._meaning = options.meaning;
+  this._smcId = options.smcId;
+  this._region = options.region; 
   this._weatherStation = { station: undefined, distance: undefined };
   Object.defineProperty(this, "name", { get: function(){ return this._name; } });
   Object.defineProperty(this, "height", { get: function(){ return this._height; } });

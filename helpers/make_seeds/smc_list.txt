@@ -166,7 +166,7 @@ M127  Maoile Lunndaidh  Bare hill of the wet place  1005  NH 135 458
 M247  Maol Chean-dearg  Bald red head  933  NG 924 499  
 M168  Maol Chinn-dearg  Bald red head  981  NH 032 087  
 M253  Mayar  Meaning obscure  928  NO 240 737  
-M261  Meall a Choire Leith  Hill of the grey corrie  926  NN 612 439  
+M261  Meall a' Choire Leith  Hill of the grey corrie  926  NN 612 439  
 M045  Meall a' Bhuiridh  Hill of the bellowing (of stags)  1108  NN 250 503  
 M243  Meall a' Chrasgaidh  Hill of the crossing  934  NH 184 733  
 M222  Meall Buidhe  Yellow hill  946  NM 849 989  
@@ -265,7 +265,7 @@ M090  Stob Coire 'an Albannaich  Peak of the corrie of the Scotsmen  1044  NN 16
 M171  Stob Coire a' Chairn  Peak of the corrie of the cairn  981  NN 185 660  
 M038  Stob Coire an Laoigh  Peak of the corrie of the calf  1116  NN 239 725  
 M039  Stob Coire Easain  Peak of the corrie of the little waterfall  1115  NN 308 730  
-M065  Stob Coire Sgreamach  Peak of the dreadful corrie 1072  NN  154 536  
+M065  Stob Coire Sgreamach  Peak of the dreadful corrie  1072  NN 154 536  
 M174  Stob Coire Sgriodain  Peak of the corrie of the scree  979  NN 356 743  
 M143  Stob Diamh  Peak of the stag  998  NN 094 308  
 M055  Stob Ghabhar  Goat peak  1090  NN 230 455  
